@@ -153,7 +153,6 @@ read the derived data written by the pipeline above and write their outputs to
 | `e4_federated.py` | federated prototype: clean, label flip, boosted model replacement |
 | `e5_anomaly.py` | benign-only autoencoder and latent density scores |
 | `make_tables.py`, `make_macros.py`, `show_results.py` | tables and summary numbers from the result files |
-| `figures/make_figures.py`, `figures/fig_multibridge.py`, `figures/gen_methodology.py` | result figures and the editable methodology figure |
 
 ```bash
 pip install -r revision/requirements.txt
