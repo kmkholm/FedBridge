@@ -132,7 +132,7 @@ digests from a fresh run so they can be compared against the anchored ones.
 
 Code released under the MIT licence (see `LICENSE`).
 
-**Contact:** Mohammed Tawfik — m.tawfik@su.edu.jo
+**Contact:** Mohammed Tawfik — m.tawfik@su.edu.ye
 
 ---
 
