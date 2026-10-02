@@ -133,3 +133,33 @@ digests from a fresh run so they can be compared against the anchored ones.
 Code released under the MIT licence (see `LICENSE`).
 
 **Contact:** Mohammed Tawfik — m.tawfik@su.edu.jo
+
+---
+
+## Revision: ten-seed experiments (`revision/`)
+
+The revised article repeats every stochastic experiment over ten seeds (42 and 0–8)
+and reports mean ± standard deviation. The scripts below produce those numbers; they
+read the derived data written by the pipeline above and write their outputs to
+`revision/results/` (not distributed, for the licence reason given above).
+
+| Script | Article content |
+|---|---|
+| `e1a_baselines.py` | classical baselines under the four frozen protocols |
+| `e1b_model.py` | BridgeMamba-KAN under the four protocols (GPU when available) |
+| `e2_triage.py` | zero-day alert triage: learned ranker, USD prior, raw-amount ablation, score fusion (weighted mean and escalation rule), address-level intervals, leave-one-positive-out |
+| `e2b_triage_kan.py` | BridgeMamba-KAN as the learned triage ranker |
+| `e3_accounts.py` | exploiter-account detection with fixed alert budgets and paired tests |
+| `e4_federated.py` | federated prototype: clean, label flip, boosted model replacement |
+| `e5_anomaly.py` | benign-only autoencoder and latent density scores |
+| `make_tables.py`, `make_macros.py`, `show_results.py` | tables and summary numbers from the result files |
+| `figures/make_figures.py`, `figures/fig_multibridge.py`, `figures/gen_methodology.py` | result figures and the editable methodology figure |
+
+```bash
+pip install -r revision/requirements.txt
+python revision/e1a_baselines.py          # likewise for the other scripts
+python revision/make_tables.py
+```
+
+The classical models are sensitive to the scikit-learn build; the pinned versions in
+`revision/requirements.txt` reproduce the published values.
